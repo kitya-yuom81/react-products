@@ -41,11 +41,13 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import CardProduct from "./components/card/card-product";
 import { getData } from "./api/api";
+import axios from "axios";
 
 export default function App() {
   const [products, setProducts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("All");
+  axios 
 
   useEffect(() => {
     getData(`/products?limit=200`).then((data) => {
